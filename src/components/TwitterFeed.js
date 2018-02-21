@@ -1,21 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Icon } from 'semantic-ui-react';
+import { Timeline } from 'react-twitter-widgets'
 
-const TwitterFeed = () => {
-  return (
-    <div className="twitter widget">
-      <h2 className="widget-title">twitter<Icon inverted name="twitter" /></h2>
-      <a 
-        className="twitter-timeline" 
-        width="300" 
-        height="400" 
-        data-theme="light" 
-        href="https://twitter.com/editingbadger?ref_src=twsrc%5Etfw"
-      >
-        Tweets by editingbadger
-      </a>
-    </div>
-  );
+class TwitterFeed extends Component {
+  render() {
+    return (
+      <div className="twitter widget">
+        <h2 className="widget-title">twitter<Icon color="blue" name="twitter" /></h2>
+        <Timeline
+          dataSource={{ sourceType: "profile", screenName:"editingbadger" }}
+          options={{ username: "editingbadger", height: "400" }}
+        />
+      </div>
+    );
+  }
 }
 
 export default TwitterFeed;

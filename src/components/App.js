@@ -4,7 +4,9 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
+import Header from './Header';
 import Landing from './Landing';
+import About from './About';
 
 class App extends Component {
   componentWillMount() {
@@ -26,7 +28,9 @@ class App extends Component {
       <div>
         <BrowserRouter>
           <div>
+            <Header />
             <Route exact path="/" component={Landing} />
+            <Route exact path="/about" component={About} />
           </div>
         </BrowserRouter>
       </div>

@@ -1,28 +1,113 @@
 body {
+  background-color: #ffdb4d;
+  margin-bottom: 50px;
   font-family: 'Open Sans', sans-serif;
+}
+
+.head {
+  background-color: #fcfcfc;
+  margin-bottom: 30px;
+  box-shadow: 0px 5px 10px rgba(0,0,0,.5);
+}
+
+.title {
+  letter-spacing: -1px;
+  text-align: center;
+  font-size: 50px;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  font-family: 'Roboto Mono', monospace;
+}
+
+@media only screen and (min-width: 900px) {
+  .title {
+    letter-spacing: 10px;
+    text-align: center;
+    font-size: 50px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    font-family: 'Roboto Mono', monospace;
+  }
+
+  .center {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+.links-div {
+  width: 100%;
+  text-align: center;
+}
+
+.links {
+  letter-spacing: 3px;
+  margin: 0 20px;
+  margin-bottom: 30px;
+  display: inline-block;
+  color: black;
+}
+
+.section-title {
+  margin: 15px;
+  padding-left: 15px;
+  margin-bottom: 0;
+  font-style: italic;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.text-input {
+  width: 300px;
+  height: 30px;
+  border-radius: 10px;
+  padding: 0 15px;
+  margin-bottom: 15px;
+}
+
+.text-area-input {
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+@media only screen and (min-width: 601px) {
+  .text-area-input {
+    width: 85%;
+  }
 }
 
 .widget {
   padding: 15px;
-  border-radius: 20px;
-  display: inline-block;
   margin: 15px;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  background-color: #fcfcfc;
+  box-shadow: 0px 5px 10px rgba(0,0,0,.5);
 }
 
 .widget-title {
   margin: 10px;
   margin-top: 0;
-  color: white;
+  border-bottom: 1px solid #eaeaea;
 }
 
 .icon {
   float: right;
 }
 
-.facebook {
-  background-color: rgb(59, 89, 152);
+.header {
+  border-bottom: 1px solid #eaeaea;
 }
 
-.twitter {
-  background-color: rgb(0, 132, 180);
+.description {
+  font-size: 1.3em;
 }
