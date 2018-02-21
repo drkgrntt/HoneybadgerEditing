@@ -7,7 +7,18 @@ export const saveMessage = ({ name, email, content }) => {
     firebase.database().ref('/messages')
       .push({ name, email, content })
       .then(() => {
-        dispatch(reset('ContactForm'), );
+        dispatch(reset('ContactForm'));
+    });
+  };
+};
+
+export const saveReview = ({ title, stars, content }) => {
+  return (dispatch) => {
+    alert('Thank you for the review!');
+    firebase.database().ref('/reviews')
+      .push({ title, stars, content })
+      .then(() => {
+        dispatch(reset('ReviewForm'));
     });
   };
 };

@@ -68,7 +68,7 @@ const About = () => {
               <Card.Group stackable doubling items={items} />
             </Grid>
             <br /><br />
-            <h3 className="widget-title">Notes</h3>
+            <h3 className="section-title">Notes</h3>
               <ul>
                 <li>Most pricing negotiable</li>
                 <li>Novels over 300 pages of basic typed font will incur a $25 charge for every 15 pages.</li>

@@ -7,6 +7,7 @@ import * as actions from '../actions';
 import Header from './Header';
 import Landing from './Landing';
 import About from './About';
+import Review from './Review';
 
 class App extends Component {
   componentWillMount() {
@@ -31,6 +32,7 @@ class App extends Component {
             <Header />
             <Route exact path="/" component={Landing} />
             <Route exact path="/about" component={About} />
+            <Route exact path="/reviews" component={Review} />
           </div>
         </BrowserRouter>
       </div>
