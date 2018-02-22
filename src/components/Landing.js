@@ -22,8 +22,8 @@ const Landing = () => {
         <Grid.Column width={5}>
           <h2 className="section-title">Social</h2>
           <div className="center">
-            <FacebookFeed />
             <TwitterFeed />
+            <FacebookFeed />
           </div>
         </Grid.Column>
       </Grid>

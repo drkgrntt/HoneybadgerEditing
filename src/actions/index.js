@@ -1,5 +1,8 @@
 import firebase from 'firebase';
 import { reset } from 'redux-form';
+import {
+  FETCH_REVIEWS
+} from './types';
 
 export const saveMessage = ({ name, email, content }) => {
   return (dispatch) => {
@@ -19,6 +22,15 @@ export const saveReview = ({ title, stars, content }) => {
       .push({ title, stars, content })
       .then(() => {
         dispatch(reset('ReviewForm'));
+    });
+  };
+};
+
+export const fetchReviews = () => {
+  return (dispatch) => {
+    firebase.database().ref('/reviews')
+      .on('value', (snapshot) => {
+        dispatch({ type: FETCH_REVIEWS, payload: snapshot.val() });
     });
   };
 };

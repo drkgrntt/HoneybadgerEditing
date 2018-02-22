@@ -59,7 +59,7 @@ const About = () => {
           <Grid.Column width={2} />
         </Grid>
         <br /><br />
-        <h2 className="widget-title">Pricing:</h2>
+        <h2 className="widget-title">Services/Pricing:</h2>
         <Grid>
           <Grid.Column width={1} />
           <Grid.Column width={14}>

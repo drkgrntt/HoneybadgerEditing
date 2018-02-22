@@ -106,6 +106,7 @@ body {
 
 .header {
   border-bottom: 1px solid #eaeaea;
+  width: 100%;
 }
 
 .description {

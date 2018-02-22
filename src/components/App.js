@@ -9,6 +9,8 @@ import Landing from './Landing';
 import About from './About';
 import Review from './Review';
 
+import Dashboard from './admin/Dashboard';
+
 class App extends Component {
   componentWillMount() {
     // Initialize Firebase
@@ -33,6 +35,8 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/about" component={About} />
             <Route exact path="/reviews" component={Review} />
+            {/* Admin Routes */}
+            <Route exact path="/admin/dashboard" component={Dashboard} />
           </div>
         </BrowserRouter>
       </div>
