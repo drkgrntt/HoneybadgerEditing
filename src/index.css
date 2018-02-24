@@ -65,7 +65,7 @@ body {
 }
 
 .text-input {
-  width: 300px;
+  width: 85%;
   height: 30px;
   border-radius: 10px;
   padding: 0 15px;
@@ -80,6 +80,10 @@ body {
 }
 
 @media only screen and (min-width: 601px) {
+  .text-input {
+    width: 300px;
+  }
+
   .text-area-input {
     width: 85%;
   }
@@ -118,4 +122,25 @@ body {
   width: 80%;
   height: 30px;
   border-radius: 10px;
+}
+
+.auth-fail {
+  color: red;
+  font-style: italic;
+  margin: 15px;
+}
+
+.derek {
+  height: 70px;
+  width: 150px;
+  font-weight: bold;
+  margin: 20px;
+  bottom: 0;
+  right: 0;
+  display: inline-block;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  background-color: rgb(230,230,230);
+  background-color: rgba(230,230,230,0.3);
+  float: right;
 }

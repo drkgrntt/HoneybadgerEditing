@@ -5,16 +5,24 @@ const FacebookFeed = () => {
   return (
     <div className="facebook widget">
       <h2 className="widget-title">facebook<Icon color="blue" name="facebook" /></h2>
-      <iframe 
-        title="Facebook"
-        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Feditingbadger%2F&tabs=timeline&width=300&height=400&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false&appId" 
-        width="300" 
-        height="400" 
-        style={{ border: 'none', overflow: 'hidden' }} 
-        scrolling="no" 
-        frameborder="0" 
-        allowTransparency="true"
-      />
+      <div 
+        className="fb-page" 
+        data-href="https://www.facebook.com/editingbadger/" 
+        data-tabs="timeline" 
+        data-small-header="true" 
+        data-adapt-container-width="true" 
+        data-hide-cover="true" 
+        data-show-facepile="false"
+      >
+        <blockquote 
+          cite="https://www.facebook.com/editingbadger/" 
+          className="fb-xfbml-parse-ignore"
+        >
+          <a href="https://www.facebook.com/editingbadger/">
+            Honeybadger Editing
+          </a>
+        </blockquote>
+      </div>
     </div>
   );
 }
