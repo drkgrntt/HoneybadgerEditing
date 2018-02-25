@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { logoutUser } from '../actions';
 
 class Header extends Component {
+  onLogoutClick() {
+    const { logoutUser, history } = this.props;
+
+    logoutUser(history);
+  }
+
   renderAdminContent() {
-    console.log(this.props.Auth);
     if (this.props.Auth.user.isAdmin) {
       return (
-        <div>
-          Admin view enabled
+        <div className="links-div">
+          <p className="admin-links"><em>Admin view enabled</em></p>
+           - <Link className="admin-links" to="/admin/dashboard">Dashboard</Link> - 
+          <a className="admin-links" onClick={this.onLogoutClick.bind(this)}>Logout</a>
         </div>
       );
     }
@@ -34,4 +42,4 @@ const mapStateToProps = ({ Auth }) => {
   return { Auth };
 };
 
-export default connect(mapStateToProps, null)(Header);
+export default connect(mapStateToProps, { logoutUser })(withRouter(Header));

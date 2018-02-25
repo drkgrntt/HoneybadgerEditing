@@ -27,6 +27,8 @@ class App extends Component {
     };
 
     firebase.initializeApp(config);
+
+    this.props.fetchUser();
   }
 
   render() {
