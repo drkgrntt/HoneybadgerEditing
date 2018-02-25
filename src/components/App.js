@@ -8,6 +8,7 @@ import Header from './Header';
 import Landing from './Landing';
 import About from './About';
 import Review from './Review';
+import Blog from './Blog';
 import Register from './Register';
 import Login from './Login';
 import Derek from './Derek';
@@ -40,6 +41,7 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/about" component={About} />
             <Route exact path="/reviews" component={Review} />
+            <Route exact path="/blog" component={Blog} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             {/* Admin Routes */}

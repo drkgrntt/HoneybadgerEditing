@@ -44,7 +44,7 @@ class Login extends Component {
     const { handleSubmit } = this.props;
 
     return (
-      <Grid>
+      <Grid stackable>
         <Grid.Column width={4} />
         <Grid.Column width={8}>
           <div className="widget center-text">

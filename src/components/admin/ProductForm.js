@@ -46,6 +46,7 @@ class ProductForm extends Component {
             name="note"
             component={this.renderTextField}
           />
+          <p>(To leave any blank, enter one space)</p>
           <Button
             onClick={handleSubmit(this.onSubmit.bind(this))}
             basic

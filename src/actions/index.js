@@ -1,5 +1,4 @@
 import firebase from 'firebase';
-import _ from 'lodash';
 import { reset } from 'redux-form';
 import {
   FETCH_REVIEWS,
