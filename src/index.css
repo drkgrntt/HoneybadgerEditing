@@ -6,7 +6,7 @@ body {
 
 .head {
   background-color: #fcfcfc;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   box-shadow: 0px 5px 10px rgba(0,0,0,.5);
 }
 
@@ -109,6 +109,7 @@ a:hover {
   margin: 10px;
   margin-top: 0;
   border-bottom: 1px solid #eaeaea;
+  width: 100%;
 }
 
 .image {
@@ -118,6 +119,17 @@ a:hover {
   background-color: #fcfcfc;
   box-shadow: 0px 5px 10px rgba(0,0,0,.5);
   transition: box-shadow .15s;
+  width: 85%;
+}
+
+@media only screen and (min-width: 601px) {
+  .image {
+    width: 100%;
+  }
+}
+
+.quote {
+  margin: 30px 10px;
 }
 
 .image:hover {

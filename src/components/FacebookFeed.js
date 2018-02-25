@@ -3,7 +3,7 @@ import { Icon } from 'semantic-ui-react';
 
 const FacebookFeed = () => {
   return (
-    <div className="facebook widget">
+    <div className="widget">
       <h2 className="widget-title">facebook<Icon color="blue" name="facebook" /></h2>
       <div 
         className="fb-page" 

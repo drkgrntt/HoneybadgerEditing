@@ -3,7 +3,7 @@ import { Icon } from 'semantic-ui-react';
 
 const TwitterFeed = () => {
   return (
-    <div className="twitter widget">
+    <div className="widget">
       <h2 className="widget-title">twitter<Icon color="blue" name="twitter" /></h2>
       <a 
         className="twitter-timeline" 
