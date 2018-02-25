@@ -15,8 +15,20 @@ class Header extends Component {
       return (
         <div className="links-div">
           <p className="admin-links"><em>Admin view enabled</em></p>
-           - <Link className="admin-links" to="/admin/dashboard">Dashboard</Link> - 
-          <a className="admin-links" onClick={this.onLogoutClick.bind(this)}>Logout</a>
+           - <Link className="admin-links" to="/admin/dashboard">Dashboard</Link>
+        </div>
+      );
+    }
+  }
+
+  renderLoggedInContent() {
+    const { user } = this.props.Auth;
+
+    if (user) {
+      return (
+        <div className="links-div">
+          <p className="links"><em>Logged in as {user.username}</em></p> | 
+          <a className="links" onClick={this.onLogoutClick.bind(this)}>Logout</a>
         </div>
       );
     }
@@ -33,6 +45,7 @@ class Header extends Component {
           <Link to="/reviews" className="links">Reviews</Link> |
           <Link to="/blog" className="links">Blog</Link>
         </div>
+        {this.renderLoggedInContent()}
       </div>
     );    
   }

@@ -1,37 +1,55 @@
 import firebase from 'firebase';
 import _ from 'lodash';
 import {
+  CHECK_USERNAME,
   REGISTER_USER,
   LOGIN_USER,
   LOGIN_USER_FAIL,
   LOGOUT_USER,
-  FETCH_USER,
+  FETCH_USER
 } from './types';
 
 // AUTH ACTIONS
-export const registerUser = ({ username, email, password }, history) => {
+export const checkUsername = ({ username, email, password }, history) => {
   return (dispatch) => {
-    dispatch({ type: REGISTER_USER });
+    dispatch({ type: CHECK_USERNAME });
 
     if (username === undefined) {
-      const err = { message: 'You need to enter a username'}
+      const err = { message: 'You need to enter a username' };
 
       return loginUserFail(dispatch, err);
     }
 
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then((currentUser) => {
-        loginUserSuccess(dispatch, history, currentUser)
-      })
-      .then(() => {
-        const { currentUser } = firebase.auth();
+    firebase.database().ref('people')
+      .on('value', (snapshot) => {
+        _.map(snapshot.val(), (user) => {
+          if (username === user.username) {
+            const err = { message: 'Username is taken. Please choose something else' };
 
-        firebase.database().ref('people')
-          .push({ username, email, authUid: currentUser.uid, isAdmin: false })
-          .then(() => {})
-      })
-      .catch((err) => loginUserFail(dispatch, err));
+            return loginUserFail(dispatch, err);
+          }
+        });
+
+        return registerUser(username, email, password, history, dispatch);
+      });
   };
+};
+
+const registerUser = (username, email, password, history, dispatch) => {
+  dispatch({ type: REGISTER_USER });
+
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then((currentUser) => {
+      loginUserSuccess(dispatch, history, currentUser)
+    })
+    .then(() => {
+      const { currentUser } = firebase.auth();
+
+      firebase.database().ref('people')
+        .push({ username, email, authUid: currentUser.uid, isAdmin: false })
+        .then(() => {})
+    })
+    .catch((err) => loginUserFail(dispatch, err));
 };
 
 export const loginUser = ({ email, password }, history) => {

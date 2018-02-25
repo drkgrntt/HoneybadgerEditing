@@ -3,7 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router-dom';
 import { Grid, Button } from 'semantic-ui-react';
-import { registerUser } from '../actions';
+import { checkUsername } from '../actions';
 
 class Register extends Component {
   renderTextField(field) {
@@ -35,9 +35,9 @@ class Register extends Component {
   }
 
   onSubmit(values) {
-    const { registerUser, history } = this.props;
+    const { checkUsername, history } = this.props;
 
-    registerUser(values, history);
+    checkUsername(values, history);
   }
 
   render() {
@@ -89,5 +89,5 @@ const mapStateToProps = ({ Auth }) => {
 export default reduxForm({
   form: 'RegisterForm'
 })(
-  connect(mapStateToProps, { registerUser })(withRouter(Register))
+  connect(mapStateToProps, { checkUsername })(withRouter(Register))
 );
