@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Container, Grid } from 'semantic-ui-react';
+import MessageList from './MessageList';
 import ProductList from './ProductList';
 import ProductForm from './ProductForm';
 
@@ -10,15 +11,16 @@ class Dashboard extends Component {
     if (this.props.Auth.user.isAdmin) {
       return (
         <Grid stackable>
-          <h2>This is the admin dashboard!</h2>
           <Grid.Row>
             <Grid.Column width={8}>
-              <h2 className="section-title">Services</h2>
-              <ProductList />
+              <h2 className="section-title">Messages</h2>
+              <MessageList />
             </Grid.Column>
             <Grid.Column width={8}>
               <h2 className="section-title">Add a service</h2>
               <ProductForm />
+              <h2 className="section-title">Services</h2>
+              <ProductList />
             </Grid.Column>
           </Grid.Row>
         </Grid>

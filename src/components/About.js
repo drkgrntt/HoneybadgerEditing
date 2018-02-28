@@ -11,6 +11,10 @@ class About extends Component {
   }
 
   renderServices() {
+    if (this.props.Products == false) {
+      return <h1>Loading services . . .</h1>;
+    }
+
     return _.map(this.props.Products, (Product) => {
       return [
         <Card key={Product.uid}>
@@ -35,9 +39,15 @@ class About extends Component {
             <Grid.Column width={2} />
             <Grid.Column width={12}>
               <br />
-              <p>Elinor Mealer is the sole proprietor of Honeybadger Editing. She holds a Bachelor of Arts in English from Hannibal-LaGrange University, and a Master’s in Creative Writing from Southern New Hampshire University. Mealer has worked with two published authors on a novel and a nonfiction manuscript. Additionally, she has annotated and edited multiple resumes, scholarship letters, and cover letters.
-              Preferring to be called El, she enjoys reading and Netflixing. Her dog, Benny, is the light of her life and she dotes on him with no shame.
-              And yes, she deliberately made “honey badger” a single word.</p>
+              <p>Elinor Mealer is the sole proprietor of Honeybadger Editing. 
+              She holds a Bachelor of Arts in English from Hannibal-LaGrange University, 
+              and a Master’s in Creative Writing from Southern New Hampshire University. 
+              Mealer has worked with two published authors on a novel and a nonfiction 
+              manuscript. Additionally, she has annotated and edited multiple resumes, 
+              scholarship letters, and cover letters.
+              Preferring to be called El, she enjoys reading and Netflixing. 
+              Her dog, Benny, is the light of her life and she dotes on him with no shame.</p>
+              <p>And yes, she deliberately made “honey badger” a single word.</p>
               <p>Missouri LLC #LC001537575</p>
             </Grid.Column>
             <Grid.Column width={2} />

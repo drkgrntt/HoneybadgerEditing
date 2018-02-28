@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { Button } from 'semantic-ui-react';
-import { saveReview } from '../actions';
+import { saveReview, updateReview } from '../actions';
 
 class ReviewForm extends Component {
   renderTextField(field) {
@@ -35,7 +35,11 @@ class ReviewForm extends Component {
   }
 
   onSubmit(values) {
-    const { saveReview } = this.props;
+    const { uid, initialValues, saveReview, updateReview } = this.props;
+
+    if (initialValues) {
+      return updateReview(values, uid);
+    }
 
     saveReview(values);
   }
@@ -48,6 +52,11 @@ class ReviewForm extends Component {
         <h2 className="section-title">Leave a Review</h2>
         <br />
         <form>
+          <Field
+            label="Your First Name"
+            name="name"
+            component={this.renderTextField}
+          />
           <Field
             label="Review Title"
             name="title"
@@ -85,8 +94,13 @@ class ReviewForm extends Component {
   }
 }
 
-export default reduxForm({
-  form: 'ReviewForm'
-})(
-  connect(null, { saveReview })(ReviewForm)
-);
+const mapStateToProps = ({ Reviews }) => {
+  return { initialValues: Reviews.reviewFormValues, uid: Reviews.selectedUid };
+};
+
+const formConfig = reduxForm({
+  form: 'ReviewForm',
+  enableReinitialize: true
+})(ReviewForm);
+
+export default connect(mapStateToProps, { saveReview, updateReview })(formConfig);

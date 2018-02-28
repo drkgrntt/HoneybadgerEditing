@@ -1,14 +1,50 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import { Container, Grid, Item } from 'semantic-ui-react';
+import { Container, Grid, Item, Button } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import ReviewForm from './ReviewForm';
 import Contact from './Contact';
-import { fetchReviews } from '../actions';
+import { fetchReviews, deleteReview, fetchReview } from '../actions';
 
 class Review extends Component {
   componentDidMount() {
     this.props.fetchReviews();
+  }
+
+  onDeleteClick(review) {
+    this.props.deleteReview(review);
+  }
+
+  onEditClick(review) {
+    this.props.fetchReview(review);
+    window.scrollTo(0,400);
+  }
+
+  renderAdminButtons(review) {
+    if (this.props.auth.user.isAdmin) {
+      return (
+        <div>
+          <Button
+            size="small"
+            compact
+            basic
+            content="Edit"
+            onClick={this.onEditClick.bind(this, review)}
+            color="orange"
+            className="admin-button"
+          />
+          <Button 
+            size="small"
+            compact
+            basic
+            content="Delete" 
+            onClick={this.onDeleteClick.bind(this, review)}
+            color="red"
+            className="admin-button"
+          />
+        </div>
+      );
+    }
   }
 
   renderReviewSegment() {
@@ -22,9 +58,11 @@ class Review extends Component {
       return [
         <Item key={review.uid}>
           <Item.Content>
+            {this.renderAdminButtons(review)}
             <Item.Header>{review.title}</Item.Header>
             <Item.Meta>{review.stars} stars</Item.Meta>
             <Item.Description>{review.content}</Item.Description>
+            <Item.Meta>Reviewed by {review.name}</Item.Meta>
             <br /><hr />
           </Item.Content>
         </Item>
@@ -68,8 +106,9 @@ const mapStateToProps = (state) => {
   const reviews = _.map(state.Reviews, (val, uid) => {
     return { ...val, uid };
   });
+  const auth = state.Auth;
 
-  return { reviews };
+  return { reviews, auth };
 };
 
-export default connect(mapStateToProps, { fetchReviews })(Review);
+export default connect(mapStateToProps, { fetchReviews, deleteReview, fetchReview })(Review);

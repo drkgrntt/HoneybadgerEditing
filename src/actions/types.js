@@ -1,8 +1,11 @@
 export const FETCH_REVIEWS = 'fetch_reviews';
+export const FETCH_REVIEW = 'fetch_review';
 export const FETCH_PRODUCTS = 'fetch_products';
+export const FETCH_PRODUCT = 'fetch_product';
 export const REGISTER_USER = 'register_user';
 export const FETCH_USER = 'fetch_user';
 export const LOGIN_USER = 'login_user';
 export const LOGIN_USER_FAIL = 'login_user_fail';
 export const LOGOUT_USER = 'logout_user';
 export const CHECK_USERNAME = 'check_username';
+export const FETCH_MESSAGES = 'fetch_messages';

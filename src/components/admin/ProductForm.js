@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { Button } from 'semantic-ui-react';
-import { saveProduct } from '../../actions';
+import { saveProduct, updateProduct } from '../../actions';
 
 class ProductForm extends Component {
   renderTextField(field) {
@@ -20,9 +20,13 @@ class ProductForm extends Component {
   }
 
   onSubmit(values) {
-    const { saveProduct } = this.props;
+    const { uid, initialValues, saveProduct, updateProduct } = this.props;
 
-    saveProduct(values);
+    if (initialValues) {
+      return updateProduct(values, uid);
+    }
+
+    return saveProduct(values);
   }
 
   render() {
@@ -60,8 +64,13 @@ class ProductForm extends Component {
   }
 }
 
-export default reduxForm({
-  form: 'ProductForm'
-})(
-  connect(null, { saveProduct })(ProductForm)
-);
+const mapStateToProps = ({ Products }) => {
+  return { initialValues: Products.productFormValues, uid: Products.selectedUid };
+};
+
+const formConfig = reduxForm({
+  form: 'ProductForm',
+  enableReinitialize: true
+})(ProductForm);
+
+export default connect(mapStateToProps, { saveProduct, updateProduct })(formConfig);

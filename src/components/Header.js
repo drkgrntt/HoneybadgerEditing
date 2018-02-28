@@ -13,9 +13,9 @@ class Header extends Component {
   renderAdminContent() {
     if (this.props.Auth.user.isAdmin) {
       return (
-        <div className="links-div">
-          <p className="admin-links"><em>Admin view enabled</em></p> | 
-          <Link className="admin-links" to="/admin/dashboard">Dashboard</Link>
+        <div className="admin-links-div">
+          <p className="links"><em>Admin view enabled</em></p> | 
+          <Link className="links" to="/admin/dashboard">Dashboard</Link>
         </div>
       );
     }
@@ -26,7 +26,7 @@ class Header extends Component {
 
     if (user) {
       return (
-        <div className="links-div">
+        <div className="logged-links-div">
           <p className="links"><em>Logged in as {user.username}</em></p> | 
           <a 
             href="/" 
@@ -44,7 +44,6 @@ class Header extends Component {
     return (
       <div className="head">
         {this.renderAdminContent()}
-        <h1 className="title"><span style={{ color: '#ffdb4d' }}>honey</span>badger editing</h1>
         <div className="links-div">
           <a href="/" className="links">Home</a> |
           <Link to="/about" className="links">About</Link> |
