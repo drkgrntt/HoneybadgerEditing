@@ -9,3 +9,7 @@ export const LOGIN_USER_FAIL = 'login_user_fail';
 export const LOGOUT_USER = 'logout_user';
 export const CHECK_USERNAME = 'check_username';
 export const FETCH_MESSAGES = 'fetch_messages';
+export const SAVE_BLOG_POST = 'save_blog_post';
+export const FETCH_BLOG_POSTS = 'fetch_blog_posts';
+export const FETCH_BLOG_POST = 'fetch_blog_post';
+export const UNFETCH_BLOG_POST = 'unfetch_blog_post';

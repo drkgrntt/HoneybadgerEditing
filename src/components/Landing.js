@@ -8,18 +8,21 @@ import TwitterFeed from './TwitterFeed';
 
 const Landing = () => {
   return (
-    <div>
+    <div className="body">
       <Grid doubling stackable>
-        <Grid.Column width={11}>
+        <Grid.Column width={12}>
           <Grid.Row>
             <Grid stackable>
-              <Grid.Column width={1} />
-              <Grid.Column width={6}>
-                <Logo />
+              <Grid.Column className="no-space" width={5}>
+                <div className="center">
+                  <Logo />
+                </div>
               </Grid.Column>
-              <Grid.Column width={9}>
+              <Grid.Column className="no-space" width={11}>
                 <h2 className="section-title">Edited Works</h2>
-                <EditedWorks />
+                <div className="center">
+                  <EditedWorks />
+                </div>
               </Grid.Column>
             </Grid>
           </Grid.Row>
@@ -30,7 +33,7 @@ const Landing = () => {
             </div>
           </Grid.Row>
         </Grid.Column>
-        <Grid.Column width={5}>
+        <Grid.Column className="no-space" width={4}>
           <h2 className="section-title">Social</h2>
           <div className="center">
             <TwitterFeed />

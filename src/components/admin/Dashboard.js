@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Container, Grid } from 'semantic-ui-react';
 import MessageList from './MessageList';
+import BlogPostForm from './BlogPostForm';
 import ProductList from './ProductList';
 import ProductForm from './ProductForm';
 
@@ -15,6 +16,8 @@ class Dashboard extends Component {
             <Grid.Column width={8}>
               <h2 className="section-title">Messages</h2>
               <MessageList />
+              <h2 className="section-title">Add a blog post</h2>
+              <BlogPostForm />
             </Grid.Column>
             <Grid.Column width={8}>
               <h2 className="section-title">Add a service</h2>

@@ -6,16 +6,17 @@ import renderHTML from 'react-render-html';
 import { connect } from 'react-redux';
 import { fetchBlogPosts } from '../actions';
 
-class Blog extends Component {
+class AllBlogs extends Component {
   componentDidMount() {
     this.props.fetchBlogPosts();
-    window.scrollTo(0,0);
+    window.scrollTo(0,400);
   }
 
   renderBlogPosts() {
     const { Blogs } = this.props;
+    console.log(Blogs);
 
-    return _.map(_.takeRight(Blogs, 5), (Blog) => {
+    return _.map(Blogs, (Blog) => {
       if (Blog.title === undefined) {
         return (
           <h4>Loading . . .</h4>
@@ -26,7 +27,7 @@ class Blog extends Component {
         <div key={Blog.uid}>
           <div className="blog">
             <h2 style={{ borderBottom: '1px solid #eaeaea' }}>{Blog.title}</h2>
-            <p className="blog-content">{renderHTML(Blog.content.substring(0, 500))} . . . </p>
+            <p className="blog-content">{renderHTML(Blog.content.substring(0, 200))} . . . </p>
             <Link className="button-text" to={`/blog/${Blog.uid}`}>
               <Button 
                 compact 
@@ -46,13 +47,8 @@ class Blog extends Component {
   render() {
     return (
       <Container className="widget">
-        <h1 className="widget-title">Blog</h1>
+        <h1 className="widget-title">All Blog Posts</h1>
         {this.renderBlogPosts()}
-        <Link to="/blogs/all" style={{ margin: '30px' }}>
-          <Button compact basic color="black">
-            See all posts
-          </Button>
-        </Link>
       </Container>
     );
   }
@@ -66,4 +62,4 @@ const mapStateToProps = (state) => {
   return { Blogs };
 };
 
-export default connect(mapStateToProps, { fetchBlogPosts })(Blog);
+export default connect(mapStateToProps, { fetchBlogPosts })(AllBlogs);

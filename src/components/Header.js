@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { logoutUser } from '../actions';
+import { unfetchBlogPost, logoutUser } from '../actions';
 
 class Header extends Component {
   onLogoutClick() {
@@ -10,12 +10,22 @@ class Header extends Component {
     logoutUser(history);
   }
 
+  onDashboardClick() {
+    this.props.unfetchBlogPost();
+  }
+
   renderAdminContent() {
     if (this.props.Auth.user.isAdmin) {
       return (
         <div className="admin-links-div">
           <p className="links"><em>Admin view enabled</em></p> | 
-          <Link className="links" to="/admin/dashboard">Dashboard</Link>
+          <Link 
+            onClick={this.onDashboardClick.bind(this)} 
+            className="links" 
+            to="/admin/dashboard"
+          >
+            Dashboard
+          </Link>
         </div>
       );
     }
@@ -60,4 +70,4 @@ const mapStateToProps = ({ Auth }) => {
   return { Auth };
 };
 
-export default connect(mapStateToProps, { logoutUser })(withRouter(Header));
+export default connect(mapStateToProps, { unfetchBlogPost, logoutUser })(withRouter(Header));
