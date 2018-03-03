@@ -191,6 +191,11 @@ a:hover {
   float: right;
 }
 
+.blog-button {
+  display: inline;
+  float: left;
+}
+
 .auth-fail {
   color: red;
   font-style: italic;

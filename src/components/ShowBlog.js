@@ -69,12 +69,14 @@ class ShowBlog extends Component {
           <h2 style={{ borderBottom: '1px solid #eaeaea'}}>{Blog.title}</h2>
           <p className="blog-content">{renderHTML(Blog.content)}</p>
           <hr />
-          <Link className="button-text" to="/blog">
-            <Button compact basic color="black">
-              Back
-            </Button>
-          </Link>
-          {this.renderAdminButtons()}
+          <div style={{ marginBottom: '30px' }}>
+            <Link className="blog-button" to="/blog">
+              <Button compact basic color="black">
+                Back
+              </Button>
+            </Link>
+            {this.renderAdminButtons()}
+          </div>
         </div>
       </Container>
     );
