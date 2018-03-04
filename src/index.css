@@ -1,5 +1,5 @@
 body {
-  background-color: #ffdb4d;
+  background-color: #f2d736;
   margin-bottom: 50px;
   font-family: 'Open Sans', sans-serif;
 }
@@ -11,13 +11,13 @@ body {
 }
 
 .head {
-  background-color: #fff;
+  background-color: #f2d736;
   background-image: url('https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/17498861_1475148009186094_1532295659461561415_n.png?oh=9f0ff447f6c37494c8a43a981ab0ea2d&oe=5B1268BA');
   margin-bottom: 30px;
   background-repeat: no-repeat;
-  background-size: 100% 160px;
+  background-size: 105% 118%;
   background-position: center;
-  height: 160px;
+  height: 140px;
   box-shadow: 0px 5px 10px rgba(0,0,0,.5);
   position: relative;
 }
@@ -28,8 +28,11 @@ a:hover {
 
 @media only screen and (min-width: 900px) {
   .head {
-    height: 300px;
-    background-size: 60% 300px;
+    margin: 0 auto;
+    height: 262px;
+    width: 60%;
+    background-size: 105% 118%;
+    border-radius: 10px;
   }
 
   .center {
@@ -42,21 +45,21 @@ a:hover {
   width: 100%;
   text-align: center;
   position: absolute;
-  top: 15px;
+  top: 5px;
 }
 
 .logged-links-div {
   width: 100%;
   text-align: center;
   position: absolute;
-  top: 93px;
+  top: 84px;
 }
 
 .links-div {
   width: 100%;
   text-align: center;
   position: absolute;
-  top: 124px;
+  top: 115px;
 }
 
 .links {
@@ -68,15 +71,15 @@ a:hover {
 
 @media only screen and (min-width: 900px) {
   .links-div {
-    top: 240px;
+    top: 225px;
   }
 
   .logged-links-div {
-    top: 186px;
+    top: 166px;
   }
 
   .admin-links-div {
-    top: 36px;
+    top: 18px;
   }
 
   .links {
