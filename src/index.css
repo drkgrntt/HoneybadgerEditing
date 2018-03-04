@@ -11,9 +11,8 @@ body {
 }
 
 .head {
-  background-color: #f2d736;
+  background-color: #fff;
   background-image: url('https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/17498861_1475148009186094_1532295659461561415_n.png?oh=9f0ff447f6c37494c8a43a981ab0ea2d&oe=5B1268BA');
-  margin-bottom: 30px;
   background-repeat: no-repeat;
   background-size: 105% 118%;
   background-position: center;
@@ -30,9 +29,7 @@ a:hover {
   .head {
     margin: 0 auto;
     height: 262px;
-    width: 60%;
-    background-size: 105% 118%;
-    border-radius: 10px;
+    background-size: 60% 100%;
   }
 
   .center {
@@ -45,7 +42,7 @@ a:hover {
   width: 100%;
   text-align: center;
   position: absolute;
-  top: 5px;
+  top: 9px;
 }
 
 .logged-links-div {
@@ -71,15 +68,15 @@ a:hover {
 
 @media only screen and (min-width: 900px) {
   .links-div {
-    top: 225px;
+    top: 211px;
   }
 
   .logged-links-div {
-    top: 166px;
+    top: 162px;
   }
 
   .admin-links-div {
-    top: 18px;
+    top: 32px;
   }
 
   .links {

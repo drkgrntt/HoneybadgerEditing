@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
 import Logo from './Logo';
+import BlogWidget from './BlogWidget';
 import EditedWorks from './EditedWorks';
 import Contact from  './Contact';
 import FacebookFeed from './FacebookFeed';
@@ -16,6 +17,7 @@ const Landing = () => {
               <Grid.Column className="no-space" width={5}>
                 <div className="center">
                   <Logo />
+                  <BlogWidget />
                 </div>
               </Grid.Column>
               <Grid.Column className="no-space" width={11}>
