@@ -16,6 +16,7 @@ body {
   background-repeat: no-repeat;
   background-size: 105% 118%;
   background-position: center;
+  margin-bottom: 30px;
   height: 140px;
   box-shadow: 0px 5px 10px rgba(0,0,0,.5);
   position: relative;

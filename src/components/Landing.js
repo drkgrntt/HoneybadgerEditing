@@ -17,6 +17,7 @@ const Landing = () => {
               <Grid.Column className="no-space" width={5}>
                 <div className="center">
                   <Logo />
+                  <h2 className="section-title">Feature Blog</h2>
                   <BlogWidget />
                 </div>
               </Grid.Column>
