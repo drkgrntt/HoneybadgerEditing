@@ -61,8 +61,8 @@ class Review extends Component {
             {this.renderAdminButtons(review)}
             <Item.Header>{review.title}</Item.Header>
             <Item.Meta>{review.stars} stars</Item.Meta>
-            <Item.Description>{review.content}</Item.Description>
-            <Item.Meta>Reviewed by {review.name}</Item.Meta>
+            <Item.Description className="text">{review.content}</Item.Description>
+            <Item.Meta className="text">Reviewed by {review.name}</Item.Meta>
             <br /><hr />
           </Item.Content>
         </Item>

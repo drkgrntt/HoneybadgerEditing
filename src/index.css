@@ -112,6 +112,12 @@ a:hover {
   text-align: center;
 }
 
+.text {
+  letter-spacing: .3px;
+  word-spacing: 3px;
+}
+
+
 .text-input {
   width: 85%;
   height: 30px;
@@ -221,7 +227,7 @@ a:hover {
 }
 
 .blog-content {
-  letter-spacing: .5px;
+  letter-spacing: .3px;
   word-spacing: 3px;
 }
 

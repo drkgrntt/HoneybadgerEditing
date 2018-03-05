@@ -39,16 +39,10 @@ class About extends Component {
             <Grid.Column width={2} />
             <Grid.Column width={12}>
               <br />
-              <p>Elinor Mealer is the sole proprietor of Honeybadger Editing. 
-              She holds a Bachelor of Arts in English from Hannibal-LaGrange University, 
-              and a Master’s in Creative Writing from Southern New Hampshire University. 
-              Mealer has worked with two published authors on a novel and a nonfiction 
-              manuscript. Additionally, she has annotated and edited multiple resumes, 
-              scholarship letters, and cover letters.
-              Preferring to be called El, she enjoys reading and Netflixing. 
-              Her dog, Benny, is the light of her life and she dotes on him with no shame.</p>
-              <p>And yes, she deliberately made “honey badger” a single word.</p>
-              <p>Missouri LLC #LC001537575</p>
+              <p className="text">Elinor Mealer is the sole proprietor of Honeybadger Editing. She holds a Bachelor of Arts in English from Hannibal-LaGrange University, and a Master’s in Creative Writing from Southern New Hampshire University. Mealer has edited and marketed a novel and a nonfiction manuscript, with each separate author publishing upon completion. Additionally, she has annotated and edited multiple resumes, scholarship letters, and cover letters.</p>
+              <p className="text">Preferring to be called El, she enjoys reading and Netflixing. Her dog, Benny, is the light of her life and she dotes on him with no shame.</p>
+              <p className="text">And yes, she deliberately made “honey badger” a single word.</p>
+              <p className="text">Missouri LLC #LC001537575</p>
             </Grid.Column>
             <Grid.Column width={2} />
           </Grid>
