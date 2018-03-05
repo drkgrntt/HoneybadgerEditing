@@ -73,7 +73,7 @@ const mapStateToProps = ({ Blogs }) => {
 
 const formConfig = reduxForm({
   form: 'BlogPostForm',
-  enableRedinitialize: true
+  enableReinitialize: true
 })(BlogPostForm);
 
 export default connect(mapStateToProps, { saveBlogPost, updateBlogPost })(withRouter(formConfig));

@@ -13,3 +13,6 @@ export const SAVE_BLOG_POST = 'save_blog_post';
 export const FETCH_BLOG_POSTS = 'fetch_blog_posts';
 export const FETCH_BLOG_POST = 'fetch_blog_post';
 export const UNFETCH_BLOG_POST = 'unfetch_blog_post';
+export const FETCH_COMMENTS = 'fetch_comments';
+export const FETCH_COMMENT = 'fetch_comment';
+export const UNFETCH_COMMENT = 'unfetch_comment';

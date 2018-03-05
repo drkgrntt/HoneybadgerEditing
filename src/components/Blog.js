@@ -12,6 +12,33 @@ class Blog extends Component {
     window.scrollTo(0,0);
   }
 
+  renderNonAuth() {
+    if (!this.props.Auth.user) {
+      return (
+        <div>
+          <Link to="/login">
+            <Button
+              compact
+              basic
+              content="Login"
+              color="black"
+              className="admin-button"
+            />
+          </Link>
+          <Link to="/register">
+            <Button 
+              compact
+              basic
+              content="Sign Up" 
+              color="black"
+              className="admin-button"
+            />
+          </Link>  
+        </div>
+      );
+    }
+  }
+
   renderBlogPosts() {
     const { Blogs } = this.props;
 
@@ -47,6 +74,7 @@ class Blog extends Component {
     return (
       <Container className="widget">
         <h1 className="widget-title">Blog</h1>
+        {this.renderNonAuth()}
         {this.renderBlogPosts()}
         <Link to="/blogs/all" style={{ margin: '30px' }}>
           <Button compact basic color="black">
@@ -63,7 +91,7 @@ const mapStateToProps = (state) => {
     return { ...val, uid };
   });
 
-  return { Blogs };
+  return { Blogs, Auth: state.Auth };
 };
 
 export default connect(mapStateToProps, { fetchBlogPosts })(Blog);

@@ -4,6 +4,11 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+hr {
+  border-top: #eaeaea;
+  border-left: #eaeaea;
+}
+
 @media only screen and (min-width: 900px) {
   .body {
     margin: 45px;
@@ -30,7 +35,7 @@ a:hover {
   .head {
     margin: 0 auto;
     height: 262px;
-    background-size: 60% 100%;
+    background-size: 58% 100%;
   }
 
   .center {
@@ -115,11 +120,19 @@ a:hover {
   margin-bottom: 15px;
 }
 
+.text-input:focus {
+  outline: none;
+}
+
 .text-area-input {
   border-radius: 10px;
   padding: 15px;
   margin-bottom: 15px;
   width: 100%;
+}
+
+.text-area-input:focus {
+  outline: none;
 }
 
 @media only screen and (min-width: 601px) {
