@@ -1,5 +1,5 @@
 body {
-  background-color: #f2d736;
+  background-color: #fcd957;
   margin-bottom: 50px;
   font-family: 'Open Sans', sans-serif;
 }
@@ -31,11 +31,18 @@ a:hover {
   cursor: pointer;
 }
 
+@media only screen and (min-width: 470px) {
+  .head {
+    background-size: 470px 100%;
+    height: 180px;
+  }
+}
+
 @media only screen and (min-width: 900px) {
   .head {
     margin: 0 auto;
     height: 262px;
-    background-size: 58% 100%;
+    background-size: 700px 100%;
   }
 
   .center {
@@ -48,7 +55,7 @@ a:hover {
   width: 100%;
   text-align: center;
   position: absolute;
-  top: 9px;
+  top: 5px;
 }
 
 .logged-links-div {
@@ -70,6 +77,25 @@ a:hover {
   margin-bottom: 20px;
   display: inline-block;
   color: black;
+}
+
+@media only screen and (min-width: 470px) {
+  .links-div {
+    top: 141px;
+  }
+
+  .logged-links-div {
+    top: 107px;
+  }
+
+  .admin-links-div {
+    top: 20px;
+  }
+
+  .links {
+    letter-spacing: 3px;
+    margin: 0 20px;
+  }
 }
 
 @media only screen and (min-width: 900px) {
