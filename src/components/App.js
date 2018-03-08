@@ -6,6 +6,7 @@ import * as actions from '../actions';
 
 import Header from './Header';
 import Landing from './Landing';
+import AllEditedWorks from './AllEditedWorks';
 import About from './About';
 import Review from './Review';
 import Blog from './Blog';
@@ -41,6 +42,7 @@ class App extends Component {
           <div>
             <Header />
             <Route exact path="/" component={Landing} />
+            <Route exact path="/works" component={AllEditedWorks} />
             <Route exact path="/about" component={About} />
             <Route exact path="/reviews" component={Review} />
             <Route exact path="/blog" component={Blog} />

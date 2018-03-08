@@ -16,3 +16,6 @@ export const UNFETCH_BLOG_POST = 'unfetch_blog_post';
 export const FETCH_COMMENTS = 'fetch_comments';
 export const FETCH_COMMENT = 'fetch_comment';
 export const UNFETCH_COMMENT = 'unfetch_comment';
+export const FETCH_EDITED_WORK = 'fetch_edited_work';
+export const FETCH_EDITED_WORKS = 'fetch_edited_works';
+export const CREATE_EDITED_WORK = 'create_edited_work';

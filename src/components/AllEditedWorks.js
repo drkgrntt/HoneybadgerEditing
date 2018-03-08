@@ -6,9 +6,10 @@ import renderHTML from 'react-render-html';
 import { connect } from 'react-redux';
 import { fetchEditedWorks, deleteEditedWork, fetchEditedWork } from '../actions';
 
-class EditedWorks extends Component {
+class AllEditedWorks extends Component {
   componentDidMount() {
     this.props.fetchEditedWorks();
+    window.scrollTo(0,0);
   }
 
   onDeleteClick(Work) {
@@ -49,7 +50,7 @@ class EditedWorks extends Component {
   }
 
   renderEditedWork() {
-    return _.map(_.takeRight(this.props.EditedWorks, 2), (Work) => {
+    return _.map(this.props.EditedWorks, (Work) => {
       if (Work.title === undefined) {
         return (
           <h4>Loading . . .</h4>
@@ -59,7 +60,7 @@ class EditedWorks extends Component {
       return (
         <div key={Work.uid}>
           <br />
-          <h2 className="widget-title">{Work.title}</h2>
+          <h2 className="section-title">{Work.title}</h2>
           <h4 className="text no-space">By {Work.author}</h4>
           <Grid stackable>
             <Grid.Row style={{ borderBottom: '1px solid #eaeaea' }}>
@@ -90,16 +91,21 @@ class EditedWorks extends Component {
 
   render() {
     return (
-      <div className="widget">
-        <Grid stackable>
-          {this.renderEditedWork()}
+      <div>
+        <Grid>
+          <Grid.Column width={4} />
+          <Grid.Column style={{ marginTop: '40px' }} className="widget" width={8}>
+            <h1 className="widget-title">All Edited Works</h1>
+            {this.renderEditedWork()}
+            <br /><br />
+            <a href="/">
+              <Button compact basic color="black">
+                Back
+              </Button>
+            </a>
+          </Grid.Column>
+          <Grid.Column width={4} />
         </Grid>
-        <br /><br />
-        <Link to="/works">
-          <Button compact basic color="black">
-            See More
-          </Button>
-        </Link>
       </div>
     );
   }
@@ -113,4 +119,4 @@ const mapStateToProps = (state) => {
   return { EditedWorks, Auth: state.Auth };
 };
 
-export default connect(mapStateToProps, { fetchEditedWorks, deleteEditedWork, fetchEditedWork })(EditedWorks);
+export default connect(mapStateToProps, { fetchEditedWorks, deleteEditedWork, fetchEditedWork })(AllEditedWorks);
