@@ -13,6 +13,7 @@ class CommentForm extends Component {
         <textarea
           placeholder={field.label}
           type="text"
+          rows="8"
           className="text-area-input"
           {...field.input}
         />

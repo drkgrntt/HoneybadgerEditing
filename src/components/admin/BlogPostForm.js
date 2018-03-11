@@ -9,7 +9,7 @@ import { saveBlogPost, updateBlogPost } from '../../actions';
 class BlogPostForm extends Component {
   componentDidMount() {
     if (this.props.initialValues) {
-      window.scrollTo(0, 600);
+      window.scrollTo(0, 1500);
     }
   }
 

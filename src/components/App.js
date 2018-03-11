@@ -17,6 +17,7 @@ import Login from './Login';
 import Derek from './Derek';
 
 import Dashboard from './admin/Dashboard';
+import AboutForm from './admin/AboutForm';
 
 class App extends Component {
   componentWillMount() {
@@ -52,6 +53,7 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             {/* Admin Routes */}
             <Route exact path="/admin/dashboard" component={Dashboard} />
+            <Route exact path="/admin/about" component={AboutForm} />
 
             <Derek />
           </div>

@@ -1,13 +1,32 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import { connect } from 'react-redux';
-import { Container, Grid, Card } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import renderHTML from 'react-render-html';
+import { Container, Grid, Card, Button } from 'semantic-ui-react';
 import Contact from './Contact';
-import { fetchProducts } from '../actions';
+import { fetchProducts, fetchAbout } from '../actions';
 
 class About extends Component {
   componentDidMount() {
     this.props.fetchProducts();
+    this.props.fetchAbout();
+  }
+
+  renderEdit() {
+    if (this.props.Auth.user.isAdmin) {
+      return (
+        <Link to="/admin/about">
+          <Button
+            compact
+            basic
+            content="Edit"
+            color="orange"
+            className="admin-button"
+          />
+        </Link>
+      );
+    }
   }
 
   renderServices() {
@@ -30,6 +49,14 @@ class About extends Component {
     });
   }
 
+  renderAbout() {
+    if (this.props.About === undefined) {
+      return <h3>Loading . . .</h3>;
+    }
+
+    return <p>{renderHTML(this.props.About)}</p>;
+  }
+
   render() {
     return (
       <Container>
@@ -39,9 +66,8 @@ class About extends Component {
             <Grid.Column width={2} />
             <Grid.Column width={12}>
               <br />
-              <p className="text">Elinor Mealer is the sole proprietor of Honeybadger Editing. She holds a Bachelor of Arts in English from Hannibal-LaGrange University, and a Master’s in Creative Writing from Southern New Hampshire University. Mealer has edited and marketed a novel and a nonfiction manuscript, with each separate author publishing upon completion. Additionally, she has annotated and edited multiple resumes, scholarship letters, and cover letters.</p>
-              <p className="text">Preferring to be called El, she enjoys reading and Netflixing. Her dog, Benny, is the light of her life and she dotes on him with no shame.</p>
-              <p className="text">And yes, she deliberately made “honey badger” a single word.</p>
+              {this.renderEdit()}
+              {this.renderAbout()}
               <p className="text">Missouri LLC #LC001537575</p>
             </Grid.Column>
             <Grid.Column width={2} />
@@ -86,7 +112,7 @@ const mapStateToProps = (state) => {
     return { ...val, uid };
   });
 
-  return { Products };
+  return { Products, Auth: state.Auth, About: state.About.about };
 };
 
-export default connect(mapStateToProps, { fetchProducts })(About);
+export default connect(mapStateToProps, { fetchProducts, fetchAbout })(About);

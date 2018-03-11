@@ -72,7 +72,7 @@ const loginUserSuccess = (dispatch, history, currentUser) => {
       });
   });
 
-  history.push('/');
+  history.push('/blog');
 };
 
 const loginUserFail = (dispatch, err) => {

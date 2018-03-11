@@ -86,7 +86,7 @@ class ShowBlog extends Component {
           <div className="blog" key={uid}>
             <div className="blog-content">
               {this.renderCommentButtons(comment, uid)}
-              <p>{comment.content}</p>
+              <p style={{ whiteSpace: 'pre-wrap' }}>{comment.content}</p>
               <p><em>-{comment.author}</em></p>
             </div>
             <hr />

@@ -6,6 +6,7 @@ import AuthReducer from './AuthReducer';
 import MessageReducer from './MessageReducer';
 import BlogReducer from './BlogReducer';
 import EditedWorkRecuder from './EditedWorkReducer';
+import AboutReducer from './AboutReducer';
 
 export default combineReducers({
   form: formReducer,
@@ -14,5 +15,6 @@ export default combineReducers({
   Products: ProductReducer,
   Messages: MessageReducer,
   Blogs: BlogReducer,
-  EditedWorks: EditedWorkRecuder
+  EditedWorks: EditedWorkRecuder,
+  About: AboutReducer
 });

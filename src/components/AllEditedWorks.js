@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Button } from 'semantic-ui-react';
+import { Grid, Button, Container } from 'semantic-ui-react';
 import _ from 'lodash';
 import { Link } from 'react-router-dom';
 import renderHTML from 'react-render-html';
@@ -60,7 +60,7 @@ class AllEditedWorks extends Component {
       return (
         <div key={Work.uid}>
           <br />
-          <h2 className="section-title">{Work.title}</h2>
+          <h2 className="widget-title">{Work.title}</h2>
           <h4 className="text no-space">By {Work.author}</h4>
           <Grid stackable>
             <Grid.Row style={{ borderBottom: '1px solid #eaeaea' }}>
@@ -90,22 +90,39 @@ class AllEditedWorks extends Component {
   }
 
   render() {
+    if (window.innerWidth > 900) {
+      return (
+        <div>
+          <Grid>
+            <Grid.Column width={4} />
+            <Grid.Column style={{ marginTop: '40px' }} className="widget" width={8}>
+              <h1 className="section-title">All Edited Works</h1>
+              {this.renderEditedWork()}
+              <br /><br />
+              <a href="/">
+                <Button compact basic color="black">
+                  Back
+                </Button>
+              </a>
+            </Grid.Column>
+            <Grid.Column width={4} />
+          </Grid>
+        </div>
+      );      
+    }
+
     return (
       <div>
-        <Grid>
-          <Grid.Column width={4} />
-          <Grid.Column style={{ marginTop: '40px' }} className="widget" width={8}>
-            <h1 className="widget-title">All Edited Works</h1>
-            {this.renderEditedWork()}
-            <br /><br />
-            <a href="/">
-              <Button compact basic color="black">
-                Back
-              </Button>
-            </a>
-          </Grid.Column>
-          <Grid.Column width={4} />
-        </Grid>
+        <Container className="widget" style={{ marginTop: '40px' }}>
+          <h1 className="section-title">All Edited Works</h1>
+          {this.renderEditedWork()}
+          <br /><br />
+          <a href="/">
+            <Button compact basic color="black">
+              Back
+            </Button>
+          </a>
+        </Container>
       </div>
     );
   }
